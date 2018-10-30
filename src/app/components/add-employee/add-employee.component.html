@@ -1,0 +1,126 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-11">
+
+      <h3><i class="fas fa-user-plus fa-sm"> </i> Add Employee:</h3>
+
+      <br>
+
+      <form #fo="ngForm" (ngSubmit)="onSubmit(fo)" novalidate>
+
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input type="text" class="form-control" [(ngModel)]="employee.firstName" #firstName="ngModel" name="firstName"
+            id="firstName" placeholder="Enter Your First Name" required minlength="4">
+
+          <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+
+            <div *ngIf="firstName.errors?.required && firstName.touched" class="alert alert-danger">First
+              Name Is Required</div>
+            <div *ngIf="firstName.errors?.minlength && firstName.touched" class="alert alert-danger">Need
+              at Least 4 Chars</div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input type="text" class="form-control" [(ngModel)]="employee.lastName" #lastName="ngModel" name="lastName"
+            id="lastName" placeholder="Enter Your Last Name" required minlength="4">
+
+          <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+
+            <div *ngIf="lastName.errors?.required && lastName.touched" class="alert alert-danger">Last
+              Name Is Required</div>
+            <div *ngIf="lastName.errors?.minlength && lastName.touched" class="alert alert-danger">Need
+              at Least 4 Chars</div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" class="form-control" [(ngModel)]="employee.email" #email="ngModel" name="email" id="email"
+            aria-describedby="emailHelp" placeholder="Enter Your Email Address" required minlength="4">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+          <div *ngIf="email.invalid && (email.dirty || email.touched)">
+
+            <div *ngIf="email.errors?.required && email.touched" class="alert alert-danger">Email
+              Name Is Required</div>
+            <div *ngIf="email.errors?.minlength && email.touched" class="alert alert-danger">Need
+              at Least 4 Chars</div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="country">Country:</label>
+          <input type="text" class="form-control" [(ngModel)]="employee.country" #country="ngModel" name="country" id="country"
+            placeholder="Enter Your country" required minlength="4">
+
+          <div *ngIf="country.invalid && (country.dirty || country.touched)">
+
+            <div *ngIf="country.errors?.required && country.touched" class="alert alert-danger">Country
+              Is Required</div>
+            <div *ngIf="country.errors?.minlength && country.touched" class="alert alert-danger">Need
+              at Least 4 Chars</div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input type="text" class="form-control" [(ngModel)]="employee.city" #city="ngModel" name="city" id="city"
+            placeholder="Enter Your City" required minlength="4">
+
+          <div *ngIf="city.invalid && (city.dirty || city.touched)">
+
+            <div *ngIf="city.errors?.required && city.touched" class="alert alert-danger">City
+              Is Required</div>
+            <div *ngIf="city.errors?.minlength && city.touched" class="alert alert-danger">Need
+              at Least 4 Chars</div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="text" class="form-control" [(ngModel)]="employee.phone" #phone="ngModel" name="phone" id="phone"
+            placeholder="Enter Your Phone" required minlength="11">
+
+          <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+
+            <div *ngIf="phone.errors?.required && phone.touched" class="alert alert-danger">Phone
+              Is Required</div>
+            <div *ngIf="phone.errors?.minlength && phone.touched" class="alert alert-danger">Need
+              at Least 11 Chars</div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="salary">Salary:</label>
+          <input type="number" class="form-control" [(ngModel)]="employee.salary" #salary="ngModel" name="salary" id="salary"
+            placeholder="Enter Your Salary" [disabled]="disableSalary">
+
+          <div *ngIf="salary.invalid && (salary.dirty || salary.touched)">
+
+            <div *ngIf="salary.errors?.required && salary.touched" class="alert alert-danger">Salary
+              Is Required</div>
+
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
+    </div>
+
+    <div class="col-sm-1">
+      <a href="#" class="btn btn-success" [routerLink]="['']"><i class="fas fa-arrow-alt-circle-left"></i> Back to
+        Dashboard</a>
+    </div>
+
+  </div>
+</div>

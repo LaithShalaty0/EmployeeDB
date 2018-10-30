@@ -1,0 +1,14 @@
+#wrapper {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+flash-messages {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 80%;
+    margin: 0 auto;
+    z-index: 100;
+}
